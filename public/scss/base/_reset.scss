@@ -1,0 +1,24 @@
+@import '../abstract/variables';
+
+/* Global resets */
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Setting font size 1rem = 10 px for ease of use */
+html {
+  font-size: 62.5%;
+}
+
+/* Setting styles for global body element */
+body {
+  background: linear-gradient(145deg, $darkest-blue, $middle-blue, $lightest-blue) no-repeat;
+  min-height: 100vh;
+  font-family: 'Lato', Arial, sans-serif;
+  overflow-y: scroll;
+  position: relative;
+}

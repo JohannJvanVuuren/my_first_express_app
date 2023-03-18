@@ -1,0 +1,15 @@
+.buttons {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+
+  button {
+    padding: 1rem;
+    background-color: $off-white;
+    border-radius: 1rem;
+    margin: 0 1rem;
+    box-shadow: 1rem 1rem 3rem $deep-black,
+    -1rem -1rem 3rem $lightest-blue;
+  }
+
+}
