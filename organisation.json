@@ -1,0 +1,37 @@
+{
+  "organisation1": [
+    {
+      "name": "Mediterranean Travel Company",
+      "email": "medtravel@medtravel.com",
+      "pty_ltd": true
+    }
+  ],
+  "organisation2": [
+    {
+      "name": "Indo Pacific Travel Hub",
+      "email": "travelip@indopacifictravel.com",
+      "pty_ltd": false
+    }
+  ],
+  "organisation3": [
+    {
+      "name": "Slavic Tours Incorporated",
+      "email": "slavic@gmail.com",
+      "pty_ltd": false
+    }
+  ],
+  "organisation4": [
+    {
+      "name": "Virtual Tours",
+      "email": "virtual.web3.0@virtual.com",
+      "pty_ltd": true
+    }
+  ],
+  "organisation5": [
+    {
+      "name": "Caribbean Cruises",
+      "email": "caribbean.cruises@party.com",
+      "pty_ltd": false
+    }
+  ]
+}

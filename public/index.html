@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Organisational Details</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="./scss/main.css">
+</head>
+<body>
+<div class="buttons">
+    <a href="http://localhost:3000/"><button>Organisation List</button></a>
+    <a href="http://localhost:3000/terms_of_service.html"><button>Terms Of Service</button></a>
+    <a href="http://localhost:3000/privacy_policy.html"><button>Privacy Policy</button></a>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th colspan="3" class="table-heading">Organisation</th>
+        </tr>
+        <tr>
+            <th class="table-column-headings">Name</th>
+            <th class="table-column-headings">Email</th>
+            <th class="table-column-headings">Pty. Ltd.</th>
+        </tr>
+    </thead>
+    <tbody id="table-body">
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3"></td>
+        </tr>
+    </tfoot>
+</table>
+<script>
+
+    let tableData;
+
+    fetch('/jsonData')
+        .then(response => response.json())
+        .then(data => {
+            tableData = JSON.parse(data.toString());
+
+            console.log(tableData['organisation1'][0]['name']);
+
+            const tableBody = document.getElementById('table-body');
+            for (const organisation in tableData) {
+                let rowData = tableData[organisation];
+                const tableRow = document.createElement('tr');
+                for (const company of rowData) {
+                    for (const property in company) {
+                        const tableCell = document.createElement('td');
+                        tableCell.innerHTML = company[property]
+                        tableRow.appendChild(tableCell)
+                        if (property === 'pty_ltd') {
+                            if (company[property] === true) {
+                                tableCell.innerHTML = 'True';
+                            } else {
+                                tableCell.innerHTML = 'False';
+                            }
+                        }
+                    }
+                }
+                tableBody.appendChild(tableRow);
+            }
+        })
+        .catch(error => console.log(error));
+
+</script>
+</body>
+</html>
