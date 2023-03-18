@@ -1,32 +1,39 @@
+/* Import to allow use of colour variables */
+@import '../abstract/variables';
+
+/* Styling of the content of the Terms of Service and Privacy Policy pages*/
 .main {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.5);
+  color: #000;
+  height: 110%;
   margin: 10rem 0;
   text-align: center;
-  color: #000;
-  background-color: #fff;
   width: 50%;
-  height: 110%;
-  box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.5);
-  border-radius: 0.5rem;
 
-
+  /* h1 styling specific to these two pages */
   h1 {
     font-size: 7rem;
-    font-weight: 100;
     text-transform: uppercase;
+    font-weight: 100;
   }
 
+  /* h3 styling specific to these two pages */
   h3 {
     font-size: 2rem;
-    padding: 1rem 0;
     font-weight: 300;
+    padding: 1rem 0;
   }
 
+  /* Stuling of paragraph elements specific to the two pages */
   p {
     font-size: 1.6rem;
-    text-align: left;
     padding: 0.5rem 0.5rem;
+    text-align: left;
   }
 
+  /* Styling of the ul and li elements used in these two pages */
   ul {
     list-style-position: inside;
   }
@@ -36,10 +43,3 @@
   }
 
 }
-.space {
-  width: 600px;
-  margin: 50px auto;
-
-  padding: 10px;
-}
-

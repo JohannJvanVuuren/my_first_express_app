@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -12,66 +13,81 @@
           rel="stylesheet">
     <link rel="stylesheet" href="./scss/main.css">
 </head>
+
 <body>
-<div class="buttons">
-    <a href="http://localhost:3000/"><button>Organisation List</button></a>
-    <a href="http://localhost:3000/terms_of_service.html"><button>Terms Of Service</button></a>
-    <a href="http://localhost:3000/privacy_policy.html"><button>Privacy Policy</button></a>
-</div>
-<table>
-    <thead>
-        <tr>
-            <th colspan="3" class="table-heading">Organisation</th>
-        </tr>
-        <tr>
-            <th class="table-column-headings">Name</th>
-            <th class="table-column-headings">Email</th>
-            <th class="table-column-headings">Pty. Ltd.</th>
-        </tr>
-    </thead>
-    <tbody id="table-body">
 
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="3"></td>
-        </tr>
-    </tfoot>
-</table>
-<script>
+    <!--This is the button div that enable the placement of the buttons on the page. The buttons inside it are used to
+    navigate the website and send requests to the server-->
+    <div class="buttons">
+        <a href="http://localhost:3000/"><button>Organisation List</button></a>
+        <a href="http://localhost:3000/terms_of_service.html"><button>Terms Of Service</button></a>
+        <a href="http://localhost:3000/privacy_policy.html"><button>Privacy Policy</button></a>
+    </div>
 
-    let tableData;
+    <!--The table for the display of the contents of organisation.json from the server-->
+    <table>
+        <thead>
+            <tr>
+                <th colspan="3" class="table-heading">Organisation</th>
+            </tr>
+            <tr>
+                <th class="table-column-headings">Name</th>
+                <th class="table-column-headings">Email</th>
+                <th class="table-column-headings">Pty. Ltd.</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
 
-    fetch('/jsonData')
-        .then(response => response.json())
-        .then(data => {
-            tableData = JSON.parse(data.toString());
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"></td>
+            </tr>
+        </tfoot>
+    </table>
 
-            console.log(tableData['organisation1'][0]['name']);
+    <!--An inline script had to be used in order to get access to DOM elements which isn't available outside of the
+    html files in this application-->
+    <script>
 
-            const tableBody = document.getElementById('table-body');
-            for (const organisation in tableData) {
-                let rowData = tableData[organisation];
-                const tableRow = document.createElement('tr');
-                for (const company of rowData) {
-                    for (const property in company) {
-                        const tableCell = document.createElement('td');
-                        tableCell.innerHTML = company[property]
-                        tableRow.appendChild(tableCell)
-                        if (property === 'pty_ltd') {
-                            if (company[property] === true) {
-                                tableCell.innerHTML = 'True';
-                            } else {
-                                tableCell.innerHTML = 'False';
+        /*A "fetch" request to get the organisation.json data when a get request is sent to '/jsonData' on the
+        server. The purpose of this code of block is to read the data received and then use for-in and for-of loops
+        to get the data that needs to be allocated to each cell. The row and cells are then dynamically added
+        to the DOM as they are read */
+        fetch('/jsonData')
+            .then(response => response.json())
+            .then(data => {
+
+                /* Getting the json data and transforming it into a JavaScript object. */
+                const tableData = JSON.parse(data.toString());
+
+                /* This is the block that adds the elements of the data object dynamically to the DOM as referred
+                * to above */
+                const tableBody = document.getElementById('table-body');
+                for (const organisation in tableData) {
+                    let rowData = tableData[organisation];
+                    const tableRow = document.createElement('tr');
+                    for (const company of rowData) {
+                        for (const property in company) {
+                            const tableCell = document.createElement('td');
+                            tableCell.innerHTML = company[property]
+                            tableRow.appendChild(tableCell)
+                            if (property === 'pty_ltd') {
+                                if (company[property] === true) {
+                                    tableCell.innerHTML = 'True';
+                                } else {
+                                    tableCell.innerHTML = 'False';
+                                }
                             }
                         }
                     }
+                    tableBody.appendChild(tableRow);
                 }
-                tableBody.appendChild(tableRow);
-            }
-        })
-        .catch(error => console.log(error));
+            }) // An error catch in case there is an error with the fetch request.
+            .catch(error => console.log(error));
 
-</script>
+    </script>
+
 </body>
+
 </html>

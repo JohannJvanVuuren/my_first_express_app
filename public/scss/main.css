@@ -1,4 +1,4 @@
-/* Colour palette */
+/* Import of the SCSS files required by the preprocessor to construct the CSS main stylesheet. */ /* Import to allow use of colour variable */ /* Colour palette */
 /* Body background gradient */
 /* Typography */
 /* Box shadows */
@@ -19,21 +19,23 @@ html {
 /* Setting styles for global body element */
 body {
   background: linear-gradient(145deg, #02050E, #071330, #0E2763) no-repeat;
-  min-height: 100vh;
   font-family: "Lato", Arial, sans-serif;
+  min-height: 100vh;
   overflow-y: scroll;
   position: relative;
 }
 
-/* Colour palette */
+/* Import to allow use of colour variables */ /* Colour palette */
 /* Body background gradient */
 /* Typography */
 /* Box shadows */
+/* Styling of all h1 elements across all pages */
 h1 {
   color: #6B0017;
   text-align: center;
 }
 
+/* Styling of all h3 elements across all pages */
 h3 {
   color: #4B443C;
   text-align: center;
@@ -41,13 +43,14 @@ h3 {
   font-weight: 300;
 }
 
+/* Styling of the table that displays the data from organisation.json */
 tr {
   background-color: #D0D0D0;
 }
 
 th {
-  text-align: left;
   color: #634A0E;
+  text-align: left;
 }
 
 td {
@@ -56,56 +59,70 @@ td {
 }
 
 .table-heading {
-  text-align: center;
   font-size: 10rem;
-  text-transform: uppercase;
   font-weight: 100;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .table-column-headings {
-  font-size: 3rem;
+  font-size: 2rem;
   padding: 1rem;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 700;
 }
 
+/* Import to allow the use of colour variable */ /* Colour palette */
+/* Body background gradient */
+/* Typography */
+/* Box shadows */
+/* The styling and positioning of the buttons used to navigate the site by making requests to the server.*/
 .buttons {
   position: absolute;
-  top: 1rem;
   right: 2rem;
+  top: 1rem;
 }
 .buttons button {
-  padding: 1rem;
   background-color: #D0D0D0;
   border-radius: 1rem;
-  margin: 0 1rem;
   box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.8), -1rem -1rem 3rem #0E2763;
+  margin: 0 1rem;
+  padding: 1rem;
 }
 
+/* Import to allow use of colour variables */ /* Colour palette */
+/* Body background gradient */
+/* Typography */
+/* Box shadows */
+/* Styling of the content of the Terms of Service and Privacy Policy pages*/
 .main {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.5);
+  color: #000;
+  height: 110%;
   margin: 10rem 0;
   text-align: center;
-  color: #000;
-  background-color: #fff;
   width: 50%;
-  height: 110%;
-  box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.5);
-  border-radius: 0.5rem;
+  /* h1 styling specific to these two pages */
+  /* h3 styling specific to these two pages */
+  /* Stuling of paragraph elements specific to the two pages */
+  /* Styling of the ul and li elements used in these two pages */
 }
 .main h1 {
   font-size: 7rem;
-  font-weight: 100;
   text-transform: uppercase;
+  font-weight: 100;
 }
 .main h3 {
   font-size: 2rem;
-  padding: 1rem 0;
   font-weight: 300;
+  padding: 1rem 0;
 }
 .main p {
   font-size: 1.6rem;
-  text-align: left;
   padding: 0.5rem 0.5rem;
+  text-align: left;
 }
 .main ul {
   list-style-position: inside;
@@ -114,21 +131,18 @@ td {
   font-size: 1.6rem;
 }
 
-.space {
-  width: 600px;
-  margin: 50px auto;
-  padding: 10px;
-}
-
 /* Colour palette */
 /* Body background gradient */
 /* Typography */
 /* Box shadows */
+/* Table styling */
 table {
+  /* General styling */
   border-collapse: separate;
   border-spacing: 0;
-  min-width: 350px;
   box-shadow: 1rem 1rem 3rem rgba(0, 0, 0, 0.8), -1rem -1rem 3rem #0E2763;
+  min-width: 350px;
+  /* The remainder of the styling under this section is to round the corners of the table as a whole */
   /* top-left border-radius */
   /* top-right border-radius */
   /* bottom-left border-radius */
@@ -136,8 +150,8 @@ table {
 }
 table tr th,
 table tr td {
-  border-right: 1px solid #071330;
   border-bottom: 1px solid #071330;
+  border-right: 1px solid #071330;
   padding: 5px;
 }
 table tr th:first-child,
@@ -162,10 +176,11 @@ table tr:last-child td:last-child {
   border-bottom-right-radius: 0.5rem;
 }
 
+/* The centering of the main elements in the body such as the table used to display our data */
 body {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 /*# sourceMappingURL=main.css.map */

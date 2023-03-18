@@ -1,10 +1,13 @@
+/* Import to allow use of colour variables */
 @import '../abstract/_variables.scss';
 
+/* Styling of all h1 elements across all pages */
 h1 {
   color: $burgundy;
   text-align: center;
 }
 
+/* Styling of all h3 elements across all pages */
 h3 {
   color: $brown-grey;
   text-align: center;
@@ -12,13 +15,14 @@ h3 {
   font-weight: 300;
 }
 
+/* Styling of the table that displays the data from organisation.json */
 tr {
   background-color: $off-white;
 }
 
 th {
-  text-align: left;
   color: $mustard-brown;
+  text-align: left;
 }
 
 td {
@@ -27,15 +31,15 @@ td {
 }
 
 .table-heading {
-  text-align: center;
   font-size: 10rem;
-  text-transform: uppercase;
   font-weight: 100;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .table-column-headings {
-  font-size: 3rem;
+  font-size: 2rem;
   padding: 1rem;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 700;
 }

@@ -1,5 +1,6 @@
+/* The centering of the main elements in the body such as the table used to display our data */
 body {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }

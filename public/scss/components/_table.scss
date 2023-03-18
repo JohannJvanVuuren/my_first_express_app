@@ -1,17 +1,19 @@
 @import '../abstract/_variables.scss';
 
+/* Table styling */
 table {
+  /* General styling */
   border-collapse: separate;
   border-spacing: 0;
-  min-width: 350px;
   box-shadow: 1rem 1rem 3rem $deep-black,
 -1rem -1rem 3rem $lightest-blue;
+  min-width: 350px;
 
-
+  /* The remainder of the styling under this section is to round the corners of the table as a whole */
   tr th,
   tr td {
-    border-right: 1px solid $middle-blue;
     border-bottom: 1px solid $middle-blue;
+    border-right: 1px solid $middle-blue;
     padding: 5px;
   }
 
@@ -47,5 +49,3 @@ table {
   }
 
 }
-
-
